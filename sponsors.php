@@ -409,6 +409,7 @@
 								<ul class="guest-list">
 									<li><strong>Bestman</strong> Mac Neil Ivan L. Tumacay</li>
 									<li><strong>Groomsman</strong> Lord Conwe Macalma</li>
+									<li><strong>Groomsman</strong> Neil Daryl Sulit</li>
 									<li><strong>Groomsman</strong> Paolo Luis Perez</li>
 									<li><strong>Groomsman</strong> Bryan James Ilaga</li>
 									<li><strong>Groomsman</strong> Eddie Tamayo</li>
