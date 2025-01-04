@@ -43,6 +43,141 @@
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
 
+	<style>
+		.scroll-indicator {
+			position: fixed;
+			bottom: 20px;
+			left: 50%;
+			transform: translateX(-50%);
+			background-color: rgba(213, 0, 109, 0.9);
+			color: white;
+			padding: 15px 25px;
+			border-radius: 25px;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			z-index: 9999;
+			animation: bounce 2s infinite;
+			box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+			font-family: 'Work Sans', sans-serif;
+			opacity: 1;
+			transition: opacity 0.5s ease-out;
+			visibility: visible;
+		}
+
+		/* Mobile responsiveness */
+		@media screen and (max-width: 768px) {
+			.scroll-indicator {
+				padding: 10px 20px;
+				font-size: 14px;
+				bottom: 15px;
+			}
+			.scroll-indicator i {
+				font-size: 16px;
+			}
+		}
+
+		/* Small mobile devices */
+		@media screen and (max-width: 480px) {
+			.scroll-indicator {
+				padding: 8px 15px;
+				font-size: 12px;
+				bottom: 10px;
+			}
+			.scroll-indicator i {
+				font-size: 14px;
+			}
+		}
+
+		.scroll-indicator i {
+			font-size: 20px;
+		}
+
+		@keyframes bounce {
+			0%, 20%, 50%, 80%, 100% {
+				transform: translateX(-50%) translateY(0);
+			}
+			40% {
+				transform: translateX(-50%) translateY(-10px);
+			}
+			60% {
+				transform: translateX(-50%) translateY(-5px);
+			}
+		}
+
+		.scroll-indicator.fade-out {
+			opacity: 0;
+			visibility: hidden;
+		}
+	</style>
+
+	<style>
+		.calendar-modal {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.8);
+			z-index: 9999;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.calendar-modal-content {
+			background: white;
+			padding: 25px;
+			border-radius: 15px;
+			width: 90%;
+			max-width: 400px;
+			text-align: center;
+			position: relative;
+		}
+
+		.calendar-option {
+			display: block;
+			width: 100%;
+			padding: 15px;
+			margin: 10px 0;
+			border: 2px solid #D5006D;
+			border-radius: 8px;
+			background: white;
+			color: #D5006D;
+			font-weight: 600;
+			text-decoration: none;
+			transition: all 0.3s ease;
+		}
+
+		.calendar-option:hover {
+			background: #D5006D;
+			color: white;
+		}
+
+		.calendar-close {
+			position: absolute;
+			top: 10px;
+			right: 15px;
+			font-size: 24px;
+			color: #666;
+			cursor: pointer;
+			border: none;
+			background: none;
+		}
+
+		@media (max-width: 768px) {
+			.calendar-modal-content {
+				width: 95%;
+				padding: 20px;
+			}
+
+			.calendar-option {
+				padding: 12px;
+				font-size: 14px;
+			}
+		}
+	</style>
+
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -530,7 +665,7 @@
                         <h1>Dercent &amp; Meara</h1>
                         <h2>We Are Getting Married</h2>
                         <div class="simply-countdown simply-countdown-one"></div>
-						<p><a href="save_the_date.ics" class="btn btn-default btn-sm" download>Save the Date</a></p>
+						<p><a href="#" class="btn btn-default btn-sm" onclick="showCalendarModal()">Save the Date</a></p>
                     </div>
                 </div>
             </div>
@@ -635,6 +770,11 @@
 }
 </style>
 
+	<div class="scroll-indicator">
+		<i class="icon-arrow-down"></i>
+		<span>Scroll to explore</span>
+	</div>
+
 	<div id="fh5co-couple">
 		<div class="container">
 			<div class="row">
@@ -668,7 +808,7 @@
 		</div>
 	</div>
 
-	<div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/march-8/DSC00363.jpg);">
+	<div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/march-8/DSC00363.JPG);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -720,13 +860,13 @@
 			</div>
 		</div>
 	</div>
-
 	<div id="fh5co-couple-story">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
 					<span>Our Wedding Colors</span>
 					<h2>Color Palette</h2>
+					<p style="font-family: 'Work Sans', sans-serif; font-weight: 300; font-size: 18px; line-height: 1.8;">A mix of soft and natural colors, inspired by the beauty of nature and the elegance of love.</p>
 				</div>
 			</div>
 			<div class="row">
@@ -780,6 +920,7 @@
 	}
 	</style>
 
+					<div style="margin-top: -60px;"></div>
 					<div class="color-motifs-container">
 						<div class="color-circle" style="background-color: #9BC4B7;">
 							<span class="color-label">Sage<br>Green</span>
@@ -804,18 +945,32 @@
 		<h3 style="font-family: 'Sacramento', cursive; color: #D5006D; font-size: 36px;">Formal Attire</h3>
 		<p style="font-family: 'Work Sans', sans-serif;">We encourage you to dress according to our wedding COLOR MOTIFS</p>
 
+        <h3 style="font-weight: bold; color: #D5006D;">Attire for Guests:</h3>
+
 		<div class="attire-images" style="display: flex; flex-direction: column; align-items: center; margin-top: 15px;">
+        <p style="font-family: 'Work Sans', sans-serif; margin: 0;">Gentlemen: Long Sleeve (Based in the color motifs) with Black Pants</p>
 			<div style="margin-bottom: 10px; cursor: pointer;" onclick="openModal('mens-attire.png')">
 				<img src="images/mens-attire.png" alt="Men's Formal Attire" style="width: 100%; max-width: 150px; height: auto;">
 			</div>
 			<div style="cursor: pointer;" onclick="openModal('womens-attire.png')">
+            <p style="font-family: 'Work Sans', sans-serif; margin: 0;">Ladies: Dress (Based in the color motifs)</p>
 				<img src="images/womens-attire.png" alt="Women's Formal Attire" style="width: 100%; max-width: 150px; height: auto;">
 			</div>
 		</div>
 
+		<div style="margin: 20px 0;"></div>
+		
 		<h3 style="font-weight: bold; color: #D5006D;">Attire for Principal Sponsors:</h3>
-		<p style="font-family: 'Work Sans', sans-serif; margin: 0;">Gentlemen: Formal Barong with Black Pants</p>
-		<p style="font-family: 'Work Sans', sans-serif; margin: 0;">Ladies: Formal Dress in Sage Green</p>
+		<div class="attire-images" style="display: flex; flex-direction: column; align-items: center; margin-top: 15px;">
+        <p style="font-family: 'Work Sans', sans-serif; margin: 0;">Gentlemen: Barong Tagalog with Black Pants</p>
+			<div style="margin-bottom: 10px; cursor: pointer;" onclick="openModal('principal-sponsor-men.png')">
+				<img src="images/principal-sponsor-men.png" alt="Men's Formal Attire" style="width: 100%; max-width: 150px; height: auto;">
+			</div>
+			<div style="cursor: pointer;" onclick="openModal('principal-sponsor-women.png')">
+            <p style="font-family: 'Work Sans', sans-serif; margin: 0;">Ladies: Dress in Sage Green</p>
+				<img src="images/principal-sponsor-women.png" alt="Women's Formal Attire" style="width: 100%; max-width: 150px; height: auto;">
+			</div>
+		</div>
 	</div>
 
 	<div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
@@ -916,7 +1071,7 @@
                     </a>
                 </li>
 
-                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/march-8/date-8.jpg); pointer-events: none;"> 
+                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/march-8/DSC00343.JPG); pointer-events: none;"> 
                         <a href="#" class="color-3">
                             <div class="case-studies-summary">
                                 <!-- <span>50 Photos</span>
@@ -964,7 +1119,7 @@
     </div>
 </div>
 
-	<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/march-8/DSC00044.jpg); background-size: cover; background-position: center;">
+	<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/march-8/DSC00044.JPG); background-size: cover; background-position: center;">
     <div class="overlay" style="background: rgba(0, 0, 0, 0.5);"></div>
     <div class="container">
         <div class="row animate-box">
@@ -1083,8 +1238,6 @@
     });
 </script>
 
-
-
 <style>
     /* Hide the seconds part in the countdown */
     .simply-countdown-seconds {
@@ -1114,6 +1267,122 @@ function closeContactModal() {
 <script>
 // Removed the automatic opening of the contact modal on page load
 </script>
+
+	<script>
+	$(document).ready(function() {
+		const scrollIndicator = document.querySelector('.scroll-indicator');
+		let lastScrollTop = 0;
+		let scrollThreshold = 100; // Amount of scroll needed to hide the indicator
+		
+		// Keep the indicator visible initially
+		scrollIndicator.style.visibility = 'visible';
+		scrollIndicator.style.opacity = '1';
+		
+		window.addEventListener('scroll', function() {
+			let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+			
+			// Only hide when scrolling down and past the threshold
+			if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
+				scrollIndicator.classList.add('fade-out');
+			}
+			
+			lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+		});
+
+		// Ensure indicator stays visible when content loads
+		const observer = new MutationObserver(function(mutations) {
+			if (!scrollIndicator.classList.contains('fade-out')) {
+				scrollIndicator.style.visibility = 'visible';
+				scrollIndicator.style.opacity = '1';
+			}
+		});
+
+		// Observe changes in the document body
+		observer.observe(document.body, {
+			childList: true,
+			subtree: true
+		});
+	});
+	</script>
+
+	<!-- Calendar Modal -->
+	<div id="calendar-modal" class="calendar-modal" onclick="closeCalendarModal(event)">
+		<div class="calendar-modal-content">
+			<button class="calendar-close" onclick="closeCalendarModal(event)">&times;</button>
+			<h3 style="color: #D5006D; margin-bottom: 20px;">Add to Calendar</h3>
+			<a href="#" class="calendar-option" id="google-calendar">Add to Google Calendar</a>
+			<a href="#" class="calendar-option" id="ical-calendar">Add to Apple Calendar</a>
+			<a href="#" class="calendar-option" id="outlook-calendar">Add to Outlook</a>
+			<a href="#" class="calendar-option" id="yahoo-calendar">Add to Yahoo Calendar</a>
+		</div>
+	</div>
+
+	<script>
+	function showCalendarModal() {
+		document.getElementById('calendar-modal').style.display = 'flex';
+	}
+
+	function closeCalendarModal(event) {
+		if (event) {
+			event.stopPropagation();
+		}
+		if (event.target.className === 'calendar-modal' || event.target.className === 'calendar-close') {
+			document.getElementById('calendar-modal').style.display = 'none';
+		}
+	}
+
+	document.addEventListener('DOMContentLoaded', function() {
+		// Event details
+		const eventTitle = "Dercent & Meara's Wedding";
+		const eventDescription = "Join us in celebrating our special day!";
+		const eventLocation = "Ina ng Laging Saklolo Parish Sungay West, Tagaytay City, Cavite";
+		const eventStart = "20250308T080000Z"; // March 8, 2025, 4:00 PM GMT+8
+		const eventEnd = "20250308T210000Z";   // March 8, 2025, 9:00 PM GMT+8
+
+		// Google Calendar
+		document.getElementById('google-calendar').href = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventStart}/${eventEnd}&details=${encodeURIComponent(eventDescription)}&location=${encodeURIComponent(eventLocation)}`;
+
+		// Apple Calendar (iCal)
+		const icalContent = `BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:${eventStart}
+DTEND:${eventEnd}
+SUMMARY:${eventTitle}
+DESCRIPTION:${eventDescription}
+LOCATION:${eventLocation}
+END:VEVENT
+END:VCALENDAR`;
+		const icalBlob = new Blob([icalContent], { type: 'text/calendar;charset=utf-8' });
+		document.getElementById('ical-calendar').href = URL.createObjectURL(icalBlob);
+		document.getElementById('ical-calendar').download = 'wedding_invitation.ics';
+
+		// Outlook Calendar (same as Google Calendar format)
+		document.getElementById('outlook-calendar').href = `https://outlook.office.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent&subject=${encodeURIComponent(eventTitle)}&startdt=${eventStart}&enddt=${eventEnd}&body=${encodeURIComponent(eventDescription)}&location=${encodeURIComponent(eventLocation)}`;
+
+		// Yahoo Calendar
+		const yahooStart = eventStart.replace(/[:-]/g, '');
+		const yahooEnd = eventEnd.replace(/[:-]/g, '');
+		document.getElementById('yahoo-calendar').href = `https://calendar.yahoo.com/?v=60&TITLE=${encodeURIComponent(eventTitle)}&ST=${yahooStart}&ET=${yahooEnd}&DESC=${encodeURIComponent(eventDescription)}&in_loc=${encodeURIComponent(eventLocation)}`;
+
+		// Handle calendar clicks
+		document.querySelectorAll('.calendar-option').forEach(option => {
+			option.addEventListener('click', function(e) {
+				if (this.id === 'ical-calendar') {
+					// For Apple Calendar, let the download happen
+					setTimeout(() => {
+						closeCalendarModal(e);
+					}, 100);
+				} else {
+					// For other calendars, open in new tab
+					e.preventDefault();
+					window.open(this.href, '_blank');
+					closeCalendarModal(e);
+				}
+			});
+		});
+	});
+	</script>
 
 	</body>
 </html>

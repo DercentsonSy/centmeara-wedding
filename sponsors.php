@@ -196,6 +196,72 @@
 	    border-bottom: 2px solid #D5006D;
 	    border-right: 2px solid #D5006D;
 	}
+
+	.scroll-indicator {
+		position: fixed;
+		bottom: 20px;
+		left: 50%;
+		transform: translateX(-50%);
+		background-color: rgba(213, 0, 109, 0.9);
+		color: white;
+		padding: 15px 25px;
+		border-radius: 25px;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		z-index: 9999;
+		animation: bounce 2s infinite;
+		box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+		font-family: 'Work Sans', sans-serif;
+		opacity: 1;
+		transition: opacity 0.5s ease-out;
+		visibility: visible;
+	}
+
+	/* Mobile responsiveness */
+	@media screen and (max-width: 768px) {
+		.scroll-indicator {
+			padding: 10px 20px;
+			font-size: 14px;
+			bottom: 15px;
+		}
+		.scroll-indicator i {
+			font-size: 16px;
+		}
+	}
+
+	/* Small mobile devices */
+	@media screen and (max-width: 480px) {
+		.scroll-indicator {
+			padding: 8px 15px;
+			font-size: 12px;
+			bottom: 10px;
+		}
+		.scroll-indicator i {
+			font-size: 14px;
+		}
+	}
+
+	.scroll-indicator i {
+		font-size: 20px;
+	}
+
+	@keyframes bounce {
+		0%, 20%, 50%, 80%, 100% {
+			transform: translateX(-50%) translateY(0);
+		}
+		40% {
+			transform: translateX(-50%) translateY(-10px);
+		}
+		60% {
+			transform: translateX(-50%) translateY(-5px);
+		}
+	}
+
+	.scroll-indicator.fade-out {
+		opacity: 0;
+		visibility: hidden;
+	}
 	</style>
 
 	<script src="js/modernizr-2.6.2.min.js"></script>
@@ -359,7 +425,7 @@
 			</div>
 		</div>
 
-		<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/march-8/DSC00044.jpg); background-size: cover; background-position: center;">
+		<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/march-8/DSC00044.JPG); background-size: cover; background-position: center;">
 			<div class="overlay" style="background: rgba(0, 0, 0, 0.5);"></div>
 			<div class="container">
 				<div class="row animate-box">
@@ -425,6 +491,11 @@
 			</div>
 		</div>
 
+		<div class="scroll-indicator">
+			<i class="icon-arrow-down"></i>
+			<span>Scroll to explore</span>
+		</div>
+
 		<script>
 			function openContactModal() {
 				document.getElementById('contact-modal').style.display = 'flex';
@@ -442,6 +513,43 @@
 	</div>
 
 	<script src="js/jquery.min.js"></script>
+	<script>
+	$(document).ready(function() {
+		const scrollIndicator = document.querySelector('.scroll-indicator');
+		let lastScrollTop = 0;
+		let scrollThreshold = 100; // Amount of scroll needed to hide the indicator
+		
+		// Keep the indicator visible initially
+		scrollIndicator.style.visibility = 'visible';
+		scrollIndicator.style.opacity = '1';
+		
+		window.addEventListener('scroll', function() {
+			let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+			
+			// Only hide when scrolling down and past the threshold
+			if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
+				scrollIndicator.classList.add('fade-out');
+			}
+			
+			lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+		});
+
+		// Ensure indicator stays visible when content loads
+		const observer = new MutationObserver(function(mutations) {
+			if (!scrollIndicator.classList.contains('fade-out')) {
+				scrollIndicator.style.visibility = 'visible';
+				scrollIndicator.style.opacity = '1';
+			}
+		});
+
+		// Observe changes in the document body
+		observer.observe(document.body, {
+			childList: true,
+			subtree: true
+		});
+	});
+	</script>
+
 	<script src="js/jquery.easing.1.3.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.waypoints.min.js"></script>
