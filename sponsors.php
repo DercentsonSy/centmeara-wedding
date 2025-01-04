@@ -29,6 +29,175 @@
 	<!-- Theme style -->
 	<link rel="stylesheet" href="css/style.css">
 
+	<style>
+	.wedding-section {
+	    margin: 40px auto;
+	    padding: 40px;
+	    background-color: rgba(255, 255, 255, 0.95);
+	    border-radius: 12px;
+	    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	    max-width: 900px;
+	    position: relative;
+	}
+
+	.wedding-section::before {
+	    content: '';
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    height: 3px;
+	    background: linear-gradient(to right, transparent, #D5006D, transparent);
+	}
+
+	.wedding-section h2 {
+	    color: #D5006D;
+	    font-family: 'Sacramento', cursive;
+	    font-size: 42px;
+	    margin-bottom: 30px;
+	    text-align: center;
+	    text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+	    position: relative;
+	}
+
+	.wedding-section h2::after {
+	    content: '❦';
+	    display: block;
+	    font-size: 24px;
+	    color: #D5006D;
+	    margin-top: 10px;
+	    opacity: 0.7;
+	}
+
+	.wedding-section h3 {
+	    color: #333;
+	    font-family: 'Work Sans', sans-serif;
+	    font-size: 26px;
+	    margin: 25px 0;
+	    text-align: center;
+	    font-weight: 300;
+	    letter-spacing: 2px;
+	}
+
+	.guest-list {
+	    list-style: none;
+	    padding: 0;
+	    margin: 0;
+	    text-align: center;
+	}
+
+	.guest-list li {
+	    margin: 15px 0;
+	    font-family: 'Work Sans', sans-serif;
+	    font-size: 18px;
+	    color: #555;
+	    line-height: 1.6;
+	    padding: 10px 0;
+	    border-bottom: 1px solid rgba(213, 0, 109, 0.1);
+	    transition: all 0.3s ease;
+	}
+
+	.guest-list li:hover {
+	    color: #D5006D;
+	    transform: translateX(5px);
+	}
+
+	.guest-list li strong {
+	    color: #D5006D;
+	    font-weight: 600;
+	    letter-spacing: 1px;
+	    display: inline-block;
+	    margin-right: 10px;
+	}
+
+	.guest-category {
+	    margin: 40px 0;
+	    padding: 20px;
+	    border-radius: 8px;
+	    background: rgba(255, 255, 255, 0.8);
+	    position: relative;
+	}
+
+	.guest-category::before {
+	    content: '✦';
+	    position: absolute;
+	    top: -15px;
+	    left: 50%;
+	    transform: translateX(-50%);
+	    color: #D5006D;
+	    font-size: 20px;
+	}
+
+	.guest-category:last-child {
+	    margin-bottom: 0;
+	}
+
+	.section-divider {
+	    text-align: center;
+	    margin: 30px 0;
+	    height: 20px;
+	    background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="3" fill="%23D5006D" opacity="0.3"/></svg>');
+	    background-repeat: repeat-x;
+	    background-position: center;
+	}
+
+	@media (max-width: 768px) {
+	    .wedding-section {
+	        padding: 20px;
+	        margin: 20px;
+	    }
+	    
+	    .wedding-section h2 {
+	        font-size: 32px;
+	    }
+	    
+	    .wedding-section h3 {
+	        font-size: 22px;
+	    }
+	    
+	    .guest-list li {
+	        font-size: 16px;
+	        padding: 8px 0;
+	    }
+	}
+
+	/* Decorative elements */
+	.corner-decoration {
+	    position: absolute;
+	    width: 30px;
+	    height: 30px;
+	    opacity: 0.3;
+	}
+
+	.top-left {
+	    top: 10px;
+	    left: 10px;
+	    border-top: 2px solid #D5006D;
+	    border-left: 2px solid #D5006D;
+	}
+
+	.top-right {
+	    top: 10px;
+	    right: 10px;
+	    border-top: 2px solid #D5006D;
+	    border-right: 2px solid #D5006D;
+	}
+
+	.bottom-left {
+	    bottom: 10px;
+	    left: 10px;
+	    border-bottom: 2px solid #D5006D;
+	    border-left: 2px solid #D5006D;
+	}
+
+	.bottom-right {
+	    bottom: 10px;
+	    right: 10px;
+	    border-bottom: 2px solid #D5006D;
+	    border-right: 2px solid #D5006D;
+	}
+	</style>
+
 	<script src="js/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
@@ -47,14 +216,14 @@
 							<li class="active"><a href="index.php">Home</a></li>
 							<li><a href="sponsors.php">Sponsors & Key Guests</a></li>
 							<li><a href="location.php">Locations</a></li>
-							<!-- <li><a href="contact.php">Contact</a></li> -->
+							<!-- <li><a href="#" data-toggle="modal" data-target="#contactModal">Contact</a></li> -->
 						</ul>
 					</div>
 				</div>
 			</div>
 		</nav>
 
-		<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/img_bg_1.jpg);">
+		<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/march-8/DSC00382.JPG); background-position: 45% center;">
 			<div class="overlay"></div>
 			<div class="fh5co-container">
 				<div class="row">
@@ -73,51 +242,118 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-						<h2>Groom Parents</h2>
-						<ul class="list-unstyled">
-							<li>Sonny Sy</li>
-							<li>Leticia Huelgas Sy</li>
+						<div class="wedding-section">
+							<div class="corner-decoration top-left"></div>
+							<div class="corner-decoration top-right"></div>
+							<div class="corner-decoration bottom-left"></div>
+							<div class="corner-decoration bottom-right"></div>
+							<h2>Parents of the Couple</h2>
+							
+							<div class="guest-category">
+								<h3>Parents of the Groom</h3>
+								<ul class="guest-list">
+									<li>Mr. Sonny Corpuz Sy</li>
+									<li>Mrs. Leticia Huelgas Sy</li>
+								</ul>
+							</div>
+							
+							<div class="section-divider"></div>
+							
+							<div class="guest-category">
+								<h3>Parents of the Bride</h3>
+								<ul class="guest-list">
+									<li>Mr. Joselito Jamlid Abiog</li>
+									<li>Mrs. Ma. Lerma Garcia Abiog</li>
+								</ul>
+							</div>
+						</div>
 
-						</ul>
+						<div class="wedding-section">
+							<div class="corner-decoration top-left"></div>
+							<div class="corner-decoration top-right"></div>
+							<div class="corner-decoration bottom-left"></div>
+							<div class="corner-decoration bottom-right"></div>
+							<h2>Principal Sponsors</h2>
+							<div class="guest-category">
+								<ul class="guest-list">
+									<li>Mr. Ramil Marinas & Ms. Daisy Samera</li>
+									<li>Mr. Arwin Riola & Ms. Maria Lourdes Riola</li>
+									<li>Mr. Thomas Jefferson Ferrer & Ms. Katrina Cotongco Ferrer</li>
+									<li>Mr. John Lyndon Lumanog & Ms. Evelyn Quiong</li>
+									<li>Atty. Alfeo Siccuan & Ms. Josefina Siccuan</li>
+									<li>Mr. Melvin G. Berin, MD & Ms. Anna Urqiola</li>
+									<li>Mr. Rafael Zaide III & Ms. Angelica Sanchez</li>
+									<li>Mr. Bernard Michael Bautista & Ms. Rose Bautista</li>
+									<li>Mr. Jick Tarrayo & Ms. Epifania Agaran</li>
+									<li>Mr. Paolo Anthony Bugayong & Ms. Rosette Santos</li>
+									<li>Mr. Francis Edgar De Asis & Ms. Aliw Santos</li>
+									<li>Mr. Richard Corpuz & Ms. Jennifer Corpuz</li>
+								</ul>
+							</div>
+						</div>
 
-						<h2>Bride Parents</h2>
-						<ul class="list-unstyled">
-							<li>Joselito Abiog</li>
-							<li>Ma. Lerma Garcia Abiog</li>
-						</ul>
+						<div class="wedding-section">
+							<div class="corner-decoration top-left"></div>
+							<div class="corner-decoration top-right"></div>
+							<div class="corner-decoration bottom-left"></div>
+							<div class="corner-decoration bottom-right"></div>
+							<h2>Secondary Sponsors</h2>
+							
+							<div class="guest-category">
+								<h3>Ceremony Roles</h3>
+								<ul class="guest-list">
+									<li><strong>Candle</strong> Fritz Michael Manalili & Grace Robleza</li>
+									<li><strong>Veil</strong> Edel Quilao & Veronica Raquel Gamilo</li>
+									<li><strong>Cord</strong> Kendall De Guia & Mervic Claire Alina</li>
+								</ul>
+							</div>
+							
+							<div class="section-divider"></div>
+							
+							<div class="guest-category">
+								<h3>Bearers</h3>
+								<ul class="guest-list">
+									<li><strong>Ring Bearer</strong> Marc Lawrence Garcia Abiog</li>
+									<li><strong>Bible Bearer</strong> Zacharias Ralph Zaide</li>
+									<li><strong>Coin Bearer</strong> Luke Rafael Zaide</li>
+								</ul>
+							</div>
+						</div>
 
-						<h2>Key Sponsors</h2>
-						<ul class="list-unstyled">
-							<li>Singsing Samera and Husband</li>
-							<li>TJ Ferrer and Wife</li>
-							<li>Arwin Riola & Malou Riola</li>
-							<li>Melvin Bering and Aliw Sta Ana</li>
-							<li>Rafael Zaide and Angelica Sanchez</li>
-							<li>Atty. Alfeo Siccuan and Wife</li>
-							<li>Bernard Michael Bautista and Wife</li>
-							<li>Lyndon Lumanog and Evelyn Quiong</li>
-						</ul>
-
-						<h2>Secondary Sponsors</h2>
-<ul class="list-unstyled">
-    <li><strong>Bestman:</strong> Mac Neil Ivan L. Tumacay</li>
-    <li><strong>Candle:</strong> Grace Robleza and Fritz Michael Manalili</li>
-    <li><strong>Veil:</strong> Ofelia Ramos and Husband</li>
-    <li><strong>Cord:</strong> Veronica Gamilo and Kendall De Guia</li>
-    <li><strong>Groomsmen:</strong> Lord Conwe Macalma</li>
-    <li><strong>Groomsmen:</strong> Paolo Luis Perez</li>
-    <li><strong>Groomsmen:</strong> Bryan James Ilaga</li>
-    <li><strong>Groomsmen:</strong> Neil Daryl Sulit</li>
-    <li><strong>Groomsmen:</strong> Eddie Tamayo</li>
-	<li><strong>Groomsmen:</strong> Napoleon Labuson</li>
-    <li><strong>Maid of Honor:</strong> Monica Leonah G. Abiog</li>
-	<li><strong>Bridesmaid:</strong> Alessandra Sy</li>
-    <li><strong>Bridesmaid:</strong> Krystalett Sy</li>
-    <li><strong>Bridesmaid:</strong> Marrgrethe Sy</li>
-    <li><strong>Bridesmaid:</strong> Ailie Absalon</li>
-    <li><strong>Bridesmaid:</strong> Danna Gaile Ramos</li>
-    <li><strong>Bridesmaid:</strong> Mervic Claire Alina </li>
-</ul>
+						<div class="wedding-section">
+							<div class="corner-decoration top-left"></div>
+							<div class="corner-decoration top-right"></div>
+							<div class="corner-decoration bottom-left"></div>
+							<div class="corner-decoration bottom-right"></div>
+							<h2>Entourage</h2>
+							
+							<div class="guest-category">
+								<h3>Groom's Party</h3>
+								<ul class="guest-list">
+									<li><strong>Bestman</strong> Mac Neil Ivan L. Tumacay</li>
+									<li><strong>Groomsman</strong> Lord Conwe Macalma</li>
+									<li><strong>Groomsman</strong> Paolo Luis Perez</li>
+									<li><strong>Groomsman</strong> Bryan James Ilaga</li>
+									<li><strong>Groomsman</strong> Eddie Tamayo</li>
+									<li><strong>Groomsman</strong> Napoleon Labuson</li>
+								</ul>
+							</div>
+							
+							<div class="section-divider"></div>
+							
+							<div class="guest-category">
+								<h3>Bride's Party</h3>
+								<ul class="guest-list">
+									<li><strong>Maid of Honor</strong> Monica Leonah Garcia Abiog</li>
+									<li><strong>Bridesmaid</strong> Alessandra Huelgas Sy</li>
+									<li><strong>Bridesmaid</strong> Krystalett Huelgas Sy</li>
+									<li><strong>Bridesmaid</strong> Marrgrethe Huelgas Sy</li>
+									<li><strong>Bridesmaid</strong> Ailie Absalon</li>
+									<li><strong>Bridesmaid</strong> Johanna Daffny Madayag</li>
+									<li><strong>Bridesmaid</strong> Danna Gaile Ramos</li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -173,6 +409,32 @@
 				</div>
 			</div>
 		</footer>
+
+		<footer style="background-color: #D5006D; color: white; padding: 20px; text-align: center; border-top: 5px solid #fff; display: none;">
+			<h4 style="font-size: 24px;">Contact Us</h4>
+			<p style="font-size: 18px;">For any further questions or inquiries, please contact:</p>
+		</footer>
+
+		<div id="contact-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index: 1000;" onclick="closeContactModal()">
+			<div style="background-color:white; padding:20px; border-radius:8px; text-align:center;" onclick="event.stopPropagation();">
+				<h2>Contact Us</h2>
+				<p>For any further questions or inquiries, please contact:</p>
+				<p>Meara - 09292949098</p>
+				<p>Dercent - 09951029387</p>
+				<span onclick="closeContactModal()" style="color:black; position:absolute; top:20px; right:30px; font-size:30px; cursor:pointer;">&times;</span>
+			</div>
+		</div>
+
+		<script>
+			function openContactModal() {
+				document.getElementById('contact-modal').style.display = 'flex';
+			}
+
+			function closeContactModal() {
+				document.getElementById('contact-modal').style.display = 'none';
+			}
+		</script>
+
 	</div>
 
 	<div class="gototop js-top">

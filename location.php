@@ -51,6 +51,158 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
+	<style>
+		.google-map {
+			width: 100%;
+			height: 450px;
+			overflow: hidden;
+		}
+		.google-map iframe {
+			width: 100%;
+			height: 100%;
+			border: 0;
+		}
+	</style>
+
+	<style>
+		.fh5co-heading {
+			margin-bottom: 40px;
+		}
+
+		.fh5co-heading h2 {
+			font-family: 'Sacramento', cursive;
+			font-size: 56px;
+			color: #D5006D;
+			text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+			margin-bottom: 20px;
+			text-align: center;
+		}
+
+		.fh5co-heading p {
+			font-family: 'Work Sans', sans-serif;
+			font-size: 18px;
+			line-height: 1.8;
+			color: #666;
+			text-align: center;
+		}
+
+		#fh5co-started {
+			background: rgba(255, 255, 255, 0.95);
+			padding: 40px 0;
+			margin: 40px auto;
+			max-width: 1000px;
+			border-radius: 12px;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+		}
+
+		.venue-details {
+			text-align: center;
+			margin: 30px 0;
+			padding: 20px;
+			background: white;
+			border-radius: 8px;
+			box-shadow: 0 2px 10px rgba(213, 0, 109, 0.1);
+		}
+
+		.venue-details h3 {
+			font-family: 'Sacramento', cursive;
+			font-size: 36px;
+			color: #D5006D;
+			margin-bottom: 15px;
+		}
+
+		.venue-details p {
+			font-family: 'Work Sans', sans-serif;
+			font-size: 18px;
+			color: #666;
+			margin: 10px 0;
+		}
+
+		.venue-details .time {
+			font-size: 24px;
+			color: #D5006D;
+			font-weight: 500;
+			margin: 15px 0;
+		}
+
+		.map-container {
+			margin: 30px 0;
+			padding: 20px;
+			background: white;
+			border-radius: 12px;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+		}
+
+		.map-container iframe {
+			width: 100%;
+			height: 400px;
+			border-radius: 8px;
+			border: none;
+		}
+
+		.directions {
+			margin: 30px 0;
+			padding: 20px;
+			background: white;
+			border-radius: 8px;
+			box-shadow: 0 2px 10px rgba(213, 0, 109, 0.1);
+		}
+
+		.directions h4 {
+			font-family: 'Sacramento', cursive;
+			font-size: 28px;
+			color: #D5006D;
+			margin-bottom: 15px;
+			text-align: center;
+		}
+
+		.directions ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.directions li {
+			font-family: 'Work Sans', sans-serif;
+			font-size: 16px;
+			color: #666;
+			padding: 10px 0;
+			border-bottom: 1px solid rgba(213, 0, 109, 0.1);
+			position: relative;
+			padding-left: 25px;
+		}
+
+		.directions li:before {
+			content: '•';
+			color: #D5006D;
+			position: absolute;
+			left: 8px;
+			top: 10px;
+		}
+
+		.directions li:last-child {
+			border-bottom: none;
+		}
+
+		@media (max-width: 768px) {
+			.fh5co-heading h2 {
+				font-size: 42px;
+			}
+			
+			.venue-details h3 {
+				font-size: 28px;
+			}
+			
+			.venue-details .time {
+				font-size: 20px;
+			}
+			
+			.map-container iframe {
+				height: 300px;
+			}
+		}
+	</style>
+
 	</head>
 	<body>
 		
@@ -64,36 +216,19 @@
 					<!-- <div id="fh5co-logo"><a href="index.html">D & M<strong>.</strong></a></div> -->
 				</div>
 				<div class="col-xs-10 text-right menu-1">
-					<ul>
-						<li class="active"><a href="index.php">Home</a></li>
-						<li><a href="sponsors.php">Sponsors and Key Guests</a></li>
-						<!-- <li class="has-dropdown">
-							<a href="services.php">Services</a>
-							<ul class="dropdown">
-								<li><a href="#">Web Design</a></li>
-								<li><a href="#">eCommerce</a></li>
-								<li><a href="#">Branding</a></li>
-								<li><a href="#">API</a></li>
-							</ul>
-						</li> -->
-						<li>
-							<a href="location.php">Locations</a>
-							<!-- <ul class="dropdown">
-								<li><a href="#">HTML5</a></li>
-								<li><a href="#">CSS3</a></li>
-								<li><a href="#">Sass</a></li>
-								<li><a href="#">jQuery</a></li>
-							</ul> -->
-						</li>
-						<!-- <li><a href="contact.php">Contact</a></li> -->
-					</ul>
+				<ul>
+					<li class="active"><a href="index.php">Home</a></li>
+					<li><a href="sponsors.php">Sponsors & Key Guests</a></li>
+					<li><a href="location.php">Locations</a></li>
+					<li><a href="#" onclick="openContactModal()">Contact</a></li>
+				</ul>
 				</div>
 			</div>
 			
 		</div>
 	</nav>
 
-	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/img_bg_1.jpg);">
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/march-8/DSC00281.JPG); background-position: 55% center;">
 		<div class="overlay"></div>
 		<div class="fh5co-container">
 			<div class="row">
@@ -143,7 +278,7 @@
 		<!-- Google Map Embed Section -->
 		<div class="google-map">
 			<!-- <h3>Event Location</h3> -->
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31724.74532862461!2d120.98130355182516!3d14.124294952157492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd7a1d6b74f1e1%3A0x1fe3f12f3bf19567!2sIna%20ng%20Laging%20Saklolo%20Parish!5e0!3m2!1sen!2sph!4v1699394793742!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31724.74532862461!2d120.98130355182516!3d14.124294952157492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd7a1d6b74f1e1%3A0x1fe3f12f3bf19567!2sIna%20ng%20Laging%20Saklolo%20Parish!5e0!3m2!1sen!2sph!4v1699394793742!5m2!1sen!2sph" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 		</div>
 	</div>
 </div>
@@ -160,10 +295,11 @@
 					<!-- Google Map Embed Section -->
 		<div class="google-map">
 			<!-- <h3>Event Location</h3> -->
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31724.74532862461!2d120.9292378!3d14.1242303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd7974e616a945%3A0x1f6bec5568fc9d92!2sMontvida%20Garden%20and%20Event%20Place!5e0!3m2!1sen!2sph!4v1699394793742!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31724.74532862461!2d120.9292378!3d14.1242303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd7974e616a945%3A0x1f6bec5568fc9d92!2sMontvida%20Garden%20and%20Event%20Place!5e0!3m2!1sen!2sph!4v1699394793742!5m2!1sen!2sph" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 		</div>
 	</div>
 </div>
+
 		</div>
 	</div>
 
@@ -199,6 +335,11 @@
         </div>
     </div>
 </div>
+
+<footer style="background-color: #D5006D; color: white; padding: 20px; text-align: center; border-top: 5px solid #fff; display: none;">
+    <h4 style="font-size: 24px;">Contact Us</h4>
+    <p style="font-size: 18px;">For any further questions or inquiries, please contact:</p>
+</footer>
 
 	<footer id="fh5co-footer" role="contentinfo">
 		<div class="container">
@@ -250,7 +391,24 @@
 	<!-- Main -->
 	<script src="js/main.js"></script>
 
+	<div id="contact-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index: 1000;" onclick="closeContactModal()">
+    <div style="background-color:white; padding:20px; border-radius:8px; text-align:center;" onclick="event.stopPropagation();">
+        <h2>Contact Us</h2>
+        <p>For any further questions or inquiries, please contact:</p>
+        <p>Meara - 09292949098</p>
+        <p>Dercent - 09951029387</p>
+        <span onclick="closeContactModal()" style="color:black; position:absolute; top:20px; right:30px; font-size:30px; cursor:pointer;">&times;</span>
+    </div>
+</div>
+
+<script>
+function openContactModal() {
+    document.getElementById('contact-modal').style.display = 'flex';
+}
+function closeContactModal() {
+    document.getElementById('contact-modal').style.display = 'none';
+}
+</script>
 
 	</body>
 </html>
-

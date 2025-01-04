@@ -67,6 +67,416 @@
     });
 </script>
 
+<style>
+/* Original styles without the elegant sections */
+/* Add back original styles here if needed */
+</style>
+
+<style>
+.wedding-info-section {
+    padding: 40px 0;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.info-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.info-card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    margin: 20px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    border: 1px solid rgba(213, 0, 109, 0.1);
+}
+
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #D5006D, transparent);
+}
+
+.info-title {
+    font-family: 'Sacramento', cursive;
+    font-size: 2.5em;
+    color: #D5006D;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.info-content {
+    font-family: 'Work Sans', sans-serif;
+    color: #666;
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+.color-swatches {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.color-swatch {
+    text-align: center;
+    min-width: 100px;
+}
+
+.color-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border: 2px solid white;
+}
+
+.color-name {
+    font-size: 0.9em;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.attire-note {
+    font-style: italic;
+    color: #888;
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+.gift-icon {
+    font-size: 2em;
+    color: #D5006D;
+    margin-bottom: 15px;
+}
+
+.divider {
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #D5006D, transparent);
+    margin: 30px auto;
+}
+
+@media (max-width: 768px) {
+    .info-card {
+        padding: 20px;
+    }
+
+    .info-title {
+        font-size: 2em;
+    }
+
+    .color-swatches {
+        gap: 10px;
+    }
+
+    .color-swatch {
+        min-width: 80px;
+    }
+}
+</style>
+
+<style>
+/* Style for existing sections */
+.elegant-info-section {
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.95);
+    position: relative;
+}
+
+.elegant-info-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #D5006D, transparent);
+}
+
+.color-motifs-container {
+    max-width: 800px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.color-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 3px solid white;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.color-circle:hover {
+    transform: scale(1.05);
+}
+
+.color-label {
+    color: white;
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.9em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+    color: #666;
+}
+
+.attire-section {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    max-width: 800px;
+    text-align: center;
+    position: relative;
+}
+
+.attire-section h3 {
+    font-family: 'Sacramento', cursive;
+    font-size: 2.5em;
+    color: #D5006D;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.attire-details {
+    font-family: 'Work Sans', sans-serif;
+    color: #666;
+    line-height: 1.8;
+    margin: 20px 0;
+}
+
+.attire-note {
+    font-style: italic;
+    color: #888;
+    margin-top: 15px;
+    font-size: 0.9em;
+    padding: 10px;
+    border-left: 3px solid #D5006D;
+    background: rgba(213, 0, 109, 0.05);
+}
+
+.gift-section {
+    text-align: center;
+    padding: 40px;
+    max-width: 800px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gift-section h3 {
+    font-family: 'Sacramento', cursive;
+    font-size: 2.5em;
+    color: #D5006D;
+    margin-bottom: 20px;
+}
+
+.gift-note {
+    font-family: 'Work Sans', sans-serif;
+    color: #666;
+    line-height: 1.8;
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.section-divider {
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #D5006D, transparent);
+    margin: 30px auto;
+}
+
+@media (max-width: 768px) {
+    .color-circle {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .attire-section,
+    .gift-section {
+        padding: 20px;
+        margin: 20px;
+    }
+    
+    .attire-section h3,
+    .gift-section h3 {
+        font-size: 2em;
+    }
+}
+</style>
+
+<style>
+/* Enhanced styling for the gallery section */
+.elegant-gallery-section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px 0;
+}
+
+.elegant-gallery-heading {
+    font-family: 'Sacramento', cursive;
+    font-size: 3em;
+    color: #D5006D;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.elegant-gallery-desc {
+    font-family: 'Work Sans', sans-serif;
+    color: #666;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.overlay {
+    background: rgba(213, 0, 109, 0.7);
+    border-radius: 12px;
+}
+
+.elegant-started-section {
+    position: relative;
+    padding: 60px 0;
+}
+
+.elegant-started-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.elegant-started-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.elegant-started-heading {
+    font-family: 'Sacramento', cursive;
+    font-size: 3em;
+    color: #D5006D;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.elegant-started-text {
+    font-family: 'Work Sans', sans-serif;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.elegant-form-control {
+    border: 2px solid rgba(213, 0, 109, 0.2);
+    border-radius: 8px;
+    padding: 12px;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.elegant-form-control:focus {
+    border-color: #D5006D;
+    box-shadow: 0 0 10px rgba(213, 0, 109, 0.2);
+    outline: none;
+}
+
+.elegant-btn {
+    background: #D5006D;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 8px;
+    border: none;
+    font-family: 'Work Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.elegant-btn:hover {
+    background: #b3005d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(213, 0, 109, 0.3);
+}
+
+@media (max-width: 768px) {
+    .elegant-gallery-heading {
+        font-size: 2.5em;
+    }
+    
+    .elegant-started-heading {
+        font-size: 2.5em;
+    }
+    
+    .elegant-started-content {
+        margin: 20px;
+        padding: 20px;
+    }
+}
+</style>
+
 	</head>
 	<body>
 		
@@ -102,6 +512,7 @@
 							</ul> -->
 						</li>
 						<!-- <li><a href="contact.php">Contact</a></li> -->
+						<li><a href="#" onclick="openContactModal()">Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -119,7 +530,7 @@
                         <h1>Dercent &amp; Meara</h1>
                         <h2>We Are Getting Married</h2>
                         <div class="simply-countdown simply-countdown-one"></div>
-						<p><a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Dercent%20and%20Meara%20Wedding&dates=20250308T080000Z/20250308T100000Z&details=We%20invited%20you%20to%20celebrate%20our%20wedding.&location=Ina%20ng%20Laging%20Saklolo%20Parish%2C%20Philippines%20https%3A%2F%2Fwww.google.com%2Fmaps%2Fplace%2FIna%2Bng%2BLaging%2BSaklolo%2BParish%2F%4014.1243001%2C120.9824983%2C17z%2Fdata%3D%21%3A%2Fg%2F1tk6mw4p&sf=true&output=xml" class="btn btn-default btn-sm" target="_blank">Save the Date</a></p>
+						<p><a href="save_the_date.ics" class="btn btn-default btn-sm" download>Save the Date</a></p>
                     </div>
                 </div>
             </div>
@@ -212,6 +623,14 @@
 
     h2 {
         font-size: 1.2em; /* Further adjust font size for mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    #countdown {
+        font-size: 18px; /* Adjust font size for mobile */
+        padding: 10px; /* Add some padding */
+        text-align: center; /* Center text */
     }
 }
 </style>
@@ -385,111 +804,165 @@
 		<h3 style="font-family: 'Sacramento', cursive; color: #D5006D; font-size: 36px;">Formal Attire</h3>
 		<p style="font-family: 'Work Sans', sans-serif;">We encourage you to dress according to our wedding COLOR MOTIFS</p>
 
-		<div style="display: flex; justify-content: center; gap: 20px;">
-			<img src="images/mens-attire.png" alt="Men's Formal Attire" style="width: 200px; height: auto;">
-			<img src="images/womens-attire.png" alt="Women's Formal Attire" style="width: 200px; height: auto;">
-		</div>
-
-		<h3 style="font-family: 'Work Sans', sans-serif; font-weight: bold;">Attire for Principal Sponsors:</h3>
-		<p style="font-family: 'Work Sans', sans-serif;"><strong>Gentlemen:</strong> Formal Barong with Black Pants</p>
-		<p style="font-family: 'Work Sans', sans-serif;"><strong>Ladies:</strong> Formal Dress in Sage Green</p>
-	</div>
-
-	<div id="fh5co-gallery" class="fh5co-section-gray">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<span>Our Memories</span>
-					<h2>Gallery</h2>
-					<!-- <p></p> -->
-				</div>
+		<div class="attire-images" style="display: flex; flex-direction: column; align-items: center; margin-top: 15px;">
+			<div style="margin-bottom: 10px; cursor: pointer;" onclick="openModal('mens-attire.png')">
+				<img src="images/mens-attire.png" alt="Men's Formal Attire" style="width: 100%; max-width: 150px; height: auto;">
 			</div>
-			<div class="row row-bottom-padded-md">
-				<div class="col-md-12">
-					<ul id="fh5co-gallery-list">
-						
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/march-8/date-4.jpg); "> 
-						<!-- <a href="images/march-8/date-4.jpg"> -->
-							<div class="case-studies-summary">
-								<!-- <span>14 Photos</span> -->
-								<!-- <h2>Anniversary Date</h2> -->
-							</div>
-						</a>
-					</li>
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/march-8/date-5.jpg); ">
-						<!-- <a href="#" class="color-2"> -->
-							<div class="case-studies-summary">
-								<!-- <span>30 Photos</span> -->
-								<!-- <h2>Timer starts now!</h2> -->
-							</div>
-						</a>
-					</li>
-
-
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/march-8/date-6.jpg); ">
-						<a href="#" class="color-3">
-							<div class="case-studies-summary">
-								<!-- <span>90 Photos</span>
-								<h2>Beautiful sunset</h2> -->
-							</div>
-						</a>
-					</li>
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/march-8/date-7.jpg); ">
-						<a href="#" class="color-4">
-							<div class="case-studies-summary">
-								<!-- <span>12 Photos</span>
-								<h2>Company's Conference Room</h2> -->
-							</div>
-						</a>
-					</li>
-
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/march-8/date-8.jpg); ">
-							<a href="#" class="color-3">
-								<div class="case-studies-summary">
-									<!-- <span>50 Photos</span>
-									<h2>Useful baskets</h2> -->
-								</div>
-							</a>
-						</li>
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/march-8/date-9.jpg); ">
-							<a href="#" class="color-4">
-								<div class="case-studies-summary">
-									<!-- <span>45 Photos</span>
-									<h2>Skater man in the road</h2> -->
-								</div>
-							</a>
-						</li>
-
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/march-8/date-10.jpg); ">
-							<a href="#" class="color-4">
-								<div class="case-studies-summary">
-									<!-- <span>35 Photos</span>
-									<h2>Two Glas of Juice</h2> -->
-								</div>
-							</a>
-						</li>
-
-						<!-- <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-8.jpg); "> 
-							<a href="#" class="color-5">
-								<div class="case-studies-summary">
-									<span>90 Photos</span>
-									<h2>Timer starts now!</h2>
-								</div>
-							</a>
-						</li>
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-9.jpg); ">
-							<a href="#" class="color-6">
-								<div class="case-studies-summary">
-									<span>56 Photos</span>
-									<h2>Beautiful sunset</h2>
-								</div>
-							</a>
-						</li> -->
-					</ul>		
-				</div>
+			<div style="cursor: pointer;" onclick="openModal('womens-attire.png')">
+				<img src="images/womens-attire.png" alt="Women's Formal Attire" style="width: 100%; max-width: 150px; height: auto;">
 			</div>
 		</div>
+
+		<h3 style="font-weight: bold; color: #D5006D;">Attire for Principal Sponsors:</h3>
+		<p style="font-family: 'Work Sans', sans-serif; margin: 0;">Gentlemen: Formal Barong with Black Pants</p>
+		<p style="font-family: 'Work Sans', sans-serif; margin: 0;">Ladies: Formal Dress in Sage Green</p>
 	</div>
+
+	<div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+		<span onclick="closeModal()" style="color:white; position:absolute; top:20px; right:30px; font-size:30px; cursor:pointer;">&times;</span>
+		<img id="modal-img" src="" style="max-width:90%; max-height:90%;" />
+	</div>
+
+	<script>
+	function openModal(imgSrc) {
+		document.getElementById('modal-img').src = 'images/' + imgSrc;
+		document.getElementById('modal').style.display = 'flex';
+	}
+	function closeModal() {
+		document.getElementById('modal').style.display = 'none';
+	}
+	</script>
+
+	<div class="general-info" style="font-family: 'Work Sans', sans-serif; background-color: #f0f0f0; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-top: 20px; text-align: center;">
+    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+        <span>Reminder</span>
+        <h2 style="margin-bottom: 5px;">Gift Note</h2>
+    </div>
+    <p style="font-size: 18px; margin: 0; text-align: center; margin-bottom: 10px;">We are excited to start this new chapter of our lives, and your presence means the world to us. If you’d like to bless us further, a contribution to help us build our future together would be greatly appreciated.</p>
+    <div class="qr-codes" style="display: flex; flex-direction: column; align-items: center; margin-top: 15px;">
+        <div style="margin-bottom: 10px; cursor: pointer;" onclick="openModal('gcash-qr.jpg')">
+            <img src="images/gcash-qr.jpg" alt="GCash QR Code" style="width: 100%; max-width: 150px; height: auto;">
+        </div>
+        <div style="cursor: pointer;" onclick="openModal('bpi-qr.jpg')">
+            <img src="images/bpi-qr.jpg" alt="BPI QR Code" style="width: 100%; max-width: 150px; height: auto;">
+        </div>
+    </div>
+    <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+        <span onclick="closeModal()" style="color:white; position:absolute; top:20px; right:30px; font-size:30px; cursor:pointer;">&times;</span>
+        <img id="modal-img" src="" style="max-width:90%; max-height:90%;" />
+    </div>
+    <script>
+    function openModal(imgSrc) {
+        document.getElementById('modal-img').src = 'images/' + imgSrc;
+        document.getElementById('modal').style.display = 'flex';
+    }
+    function closeModal() {
+        document.getElementById('modal').style.display = 'none';
+    }
+    </script>
+</div>
+
+<div class="general-info" style="font-family: 'Work Sans', sans-serif; background-color: #f0f0f0; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-top: 20px; text-align: center;">
+    <h3 style="font-weight: bold; color: #D5006D;">GENERAL INFORMATION</h3>
+    <p>This is strictly an adult affair. Please refrain from bringing kid/s. Due to venue capacity and guidelines, we can only accommodate guests named in this invite. We hope to have a bigger celebration with everyone in the near future!</p>
+    <h3 style="font-weight: bold; color: #D5006D;">UNPLUGGED!</h3>
+    <p>We have but one plea, please keep our ceremony camera-free until we are pronounced Mr. and Mrs.</p>
+</div>
+
+	<div id="fh5co-gallery" class="elegant-gallery-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <h2 class="elegant-gallery-heading">Our Gallery</h2>
+                <!-- <p class="elegant-gallery-desc">Dercent and Meara</p> -->
+            </div>
+        </div>
+        <div class="row row-bottom-padded-md">
+            <div class="col-md-12">
+                <ul id="fh5co-gallery-list">
+                    
+                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/march-8/date-4.jpg); pointer-events: none;"> 
+                    <!-- <a href="images/march-8/date-4.jpg"> -->
+                        <div class="case-studies-summary">
+                            <!-- <span>14 Photos</span> -->
+                            <!-- <h2>Anniversary Date</h2> -->
+                        </div>
+                    </a>
+                </li>
+                <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/march-8/date-5.jpg); pointer-events: none;"> 
+                    <!-- <a href="#" class="color-2"> -->
+                        <div class="case-studies-summary">
+                            <!-- <span>30 Photos</span> -->
+                            <!-- <h2>Timer starts now!</h2> -->
+                        </div>
+                    </a>
+                </li>
+
+
+                <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/march-8/date-6.jpg); pointer-events: none;"> 
+                    <a href="#" class="color-3">
+                        <div class="case-studies-summary">
+                            <!-- <span>90 Photos</span>
+                            <h2>Beautiful sunset</h2> -->
+                        </div>
+                    </a>
+                </li>
+                <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/march-8/date-7.jpg); pointer-events: none;"> 
+                    <a href="#" class="color-4">
+                        <div class="case-studies-summary">
+                            <!-- <span>12 Photos</span>
+                            <h2>Company's Conference Room</h2> -->
+                        </div>
+                    </a>
+                </li>
+
+                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/march-8/date-8.jpg); pointer-events: none;"> 
+                        <a href="#" class="color-3">
+                            <div class="case-studies-summary">
+                                <!-- <span>50 Photos</span>
+                                <h2>Useful baskets</h2> -->
+                            </div>
+                        </a>
+                    </li>
+                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/march-8/date-9.jpg); pointer-events: none;"> 
+                        <a href="#" class="color-4">
+                            <div class="case-studies-summary">
+                                <!-- <span>45 Photos</span>
+                                <h2>Skater man in the road</h2> -->
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/march-8/date-10.jpg); pointer-events: none;"> 
+                        <a href="#" class="color-4">
+                            <div class="case-studies-summary">
+                                <!-- <span>35 Photos</span>
+                                <h2>Two Glas of Juice</h2> -->
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-8.jpg); "> 
+                        <a href="#" class="color-5">
+                            <div class="case-studies-summary">
+                                <span>90 Photos</span>
+                                <h2>Timer starts now!</h2>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-9.jpg); ">
+                        <a href="#" class="color-6">
+                            <div class="case-studies-summary">
+                                <span>56 Photos</span>
+                                <h2>Beautiful sunset</h2>
+                            </div>
+                        </a>
+                    </li> -->
+                </ul>		
+            </div>
+        </div>
+    </div>
+</div>
 
 	<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/march-8/DSC00044.jpg); background-size: cover; background-position: center;">
     <div class="overlay" style="background: rgba(0, 0, 0, 0.5);"></div>
@@ -498,8 +971,8 @@
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
                 <h2 class="text-white">Are You Attending?</h2>
                 <p class="text-light">Please fill out the form to let us know you're attending. Thank you!</p>
-            </div>
-        </div>
+                    </div>
+                    </div>
         <div class="row animate-box">
             <div class="col-md-10 col-md-offset-1">
                 <form class="form-inline" action="process.php" method="POST">
@@ -507,8 +980,8 @@
                         <div class="form-group">
                             <label for="name" class="sr-only">Name</label>
                             <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
-                        </div>
                     </div>
+                </div>
                     <div class="col-md-4 col-sm-4">
                         <div class="form-group">
                             <label for="email" class="sr-only">Email</label>
@@ -518,12 +991,11 @@
                     <div class="col-md-4 col-sm-4">
                         <button type="submit" class="btn btn-primary btn-block">I Am Attending</button>
                     </div>
-                </form>
+            </form>
             </div>
         </div>
     </div>
 </div>
-
 
 	<footer id="fh5co-footer" role="contentinfo">
 		<div class="container">
@@ -547,7 +1019,11 @@
 
 		</div>
 	</footer>
-	</div>
+	
+	<footer style="background-color: #D5006D; color: white; padding: 20px; text-align: center; border-top: 5px solid #fff; display: none;">
+    <h4 style="font-size: 24px;">Contact Us</h4>
+    <p style="font-size: 18px;">For any further questions or inquiries, please contact:</p>
+</footer>
 
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
@@ -615,5 +1091,29 @@
         display: none !important;
     }
 </style>
+
+<div id="contact-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index: 1000;" onclick="closeContactModal()">
+    <div style="background-color:white; padding:20px; border-radius:8px; text-align:center;" onclick="event.stopPropagation();">
+        <h2>Contact Us</h2>
+        <p>For any further questions or inquiries, please contact:</p>
+        <p>Meara - 09292949098</p>
+        <p>Dercent - 09951029387</p>
+        <span onclick="closeContactModal()" style="color:black; position:absolute; top:20px; right:30px; font-size:30px; cursor:pointer;">&times;</span>
+    </div>
+</div>
+
+<script>
+function openContactModal() {
+    document.getElementById('contact-modal').style.display = 'flex';
+}
+function closeContactModal() {
+    document.getElementById('contact-modal').style.display = 'none';
+}
+</script>
+
+<script>
+// Removed the automatic opening of the contact modal on page load
+</script>
+
 	</body>
 </html>

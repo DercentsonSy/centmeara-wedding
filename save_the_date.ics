@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Your Organization//Your Application//EN
+METHOD:PUBLISH
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:1234567890@example.com
+DTSTAMP:20250101T120000Z
+DTSTART:20250308T080000Z
+DTEND:20250308T100000Z
+SUMMARY:Dercent and Meara Wedding
+DESCRIPTION:We invited you to celebrate our wedding.
+LOCATION:Ina ng Laging Saklolo Parish, Philippines
+URL:https://www.google.com/maps/place/Ina+ng+Laging+Saklolo+Parish/@14.1243001,120.9824983,17z/
+END:VEVENT
+END:VCALENDAR
