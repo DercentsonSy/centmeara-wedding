@@ -384,6 +384,17 @@
 									<li><strong>Coin Bearer</strong> Luke Rafael Zaide</li>
 								</ul>
 							</div>
+							<div class="section-divider"></div>
+							<div class="guest-category">
+								<h3>Flower Girls</h3>
+								<ul class="guest-list">
+									<li>Camilla Paula Del Valle</li>
+									<li>Carmela Erin Del Valle</li>
+									<li>Mandy Louise Ferrer</li>
+									<li>Francheska Miara Baybay</li>
+									<li>Xhanthal Joy Suarez</li>
+								</ul>
+							</div>
 						</div>
 
 						<div class="wedding-section">
