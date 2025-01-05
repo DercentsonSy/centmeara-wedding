@@ -993,7 +993,7 @@
         <span>Reminder</span>
         <h2 style="margin-bottom: 5px;">Gift Note</h2>
     </div>
-    <p style="font-size: 18px; margin: 0; text-align: center; margin-bottom: 10px;">We are excited to start this new chapter of our lives, and your presence means the world to us. If you’d like to bless us further, a contribution to help us build our future together would be greatly appreciated.</p>
+    <p style="font-size: 18px; margin: 0px; text-align: center; margin-bottom: 10px; margin-top: -70px;">We are excited to start this new chapter of our lives, and your presence means the world to us. If you’d like to bless us further, a contribution to help us build our future together would be greatly appreciated.</p>
     <div class="qr-codes" style="display: flex; flex-direction: column; align-items: center; margin-top: 15px;">
         <div style="margin-bottom: 10px; cursor: pointer;" onclick="openModal('gcash-qr.jpg')">
             <img src="images/gcash-qr.jpg" alt="GCash QR Code" style="width: 100%; max-width: 150px; height: auto;">
