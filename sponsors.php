@@ -350,6 +350,7 @@
 									<li>Mr. Melvin G. Berin, MD & Ms. Anna Urqiola</li>
 									<li>Mr. Rafael Zaide III & Ms. Angelica Sanchez</li>
 									<li>Mr. Bernard Michael Bautista & Ms. Rose Bautista</li>
+									<li>Mr. Jackson Rudio & Ms. Vivien Rudio</vi>
 									<li>Mr. Jick Tarrayo & Ms. Epifania Agaran</li>
 									<li>Mr. Paolo Anthony Bugayong & Ms. Rosette Santos</li>
 									<li>Mr. Francis Edgar De Asis & Ms. Aliw Santos</li>
