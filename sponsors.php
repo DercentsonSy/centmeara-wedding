@@ -343,7 +343,7 @@
 							<div class="guest-category">
 								<ul class="guest-list">
 									<li>Mr. Ramil Marinas & Ms. Daisy Samera</li>
-									<li>Mr. Arwin Riola & Ms. Maria Lourdes Riola</li>
+									<li>Mr. Arwin Riola & Ms. Ma. Lourdes Riola</li>
 									<li>Mr. Thomas Jefferson Ferrer & Ms. Katrina Cotongco Ferrer</li>
 									<li>Mr. John Lyndon Lumanog & Ms. Evelyn Quiong</li>
 									<li>Atty. Alfeo Siccuan & Ms. Josefina Siccuan</li>
